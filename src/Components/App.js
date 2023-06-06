@@ -5,6 +5,10 @@ import Footer from './layout/footer';
 import { Link, Routes, Route } from 'react-router-dom';
 import About from './pages/About';
 import Faq from './pages/Faq';
+import Channel from './channel';
+import Messages from './messages';
+import Time from './time';
+import Podium from './podium';
 
 const App = () => {
   return (
@@ -14,6 +18,10 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/faq" element={<Faq />} />
+        <Route path="/channel" element={<Channel />} />
+        <Route path="/messages" element={<Messages />} />
+        <Route path="/time" element={<Time />} />
+        <Route path="/podium" element={<Podium />} />
       </Routes>
       <Footer />
     </div>
