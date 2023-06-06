@@ -16,7 +16,7 @@ function Podium() {
   //     try {
   //       let channel = 'C04NDK3D5TJ';
   //       let token =
-  //         '';
+  //         'xoxp-4737822716051-4750575042113-5011075954039-daf26b28d7a980b3c772121446cfa47b';
   //       let messages = await topMessages(channel, token);
 
   //       setMessages(messages);

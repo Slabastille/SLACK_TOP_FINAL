@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 // import SlackContext from '../context/slackContext';
 // import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useContext, useEffect } from 'react';
+import SlackContext from '../context/slackContext';
+import { useState } from 'react';
 
 function Channel() {
   let navigate = useNavigate();
@@ -11,10 +14,14 @@ function Channel() {
     let path = '/messages';
     navigate(path);
   };
-  //   const { channel, setChannel } = useContext(SlackContext);
-  //   function Redirect() {
-  //     "location.href='/Podium'";
-  //   }
+
+  const { chosenChannel, setChosenChannel } = useContext(SlackContext);
+
+  console.log('here', chosenChannel);
+  const handleChange = (event) => {
+    console.log(event.target.value);
+    setChosenChannel(event.target.value);
+  };
   return (
     <div>
       {/* Channel info here is going to be static
@@ -31,10 +38,10 @@ function Channel() {
 
       <div>
         <h4>What channel will you be selecting</h4>
-        <select>
-          <option value="id1">General</option>
-          <option value="id2">TC_MEMES</option>
-          <option value="id3">INSERT CUSTOM CHANNEL HERE</option>
+        <select value={chosenChannel} onChange={handleChange}>
+          <option value="General">General</option>
+          <option value="TC_MEMES">TC_MEMES</option>
+          <option value="CUSTOM">INSERT CUSTOM CHANNEL HERE</option>
         </select>
       </div>
       <div> - </div>

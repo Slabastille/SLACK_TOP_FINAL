@@ -9,22 +9,24 @@ import Channel from './channel';
 import Messages from './messages';
 import Time from './time';
 import Podium from './podium';
-
+import { SlackProvider } from '../context/slackContext';
 const App = () => {
   return (
-    <div>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/faq" element={<Faq />} />
-        <Route path="/channel" element={<Channel />} />
-        <Route path="/messages" element={<Messages />} />
-        <Route path="/time" element={<Time />} />
-        <Route path="/podium" element={<Podium />} />
-      </Routes>
-      <Footer />
-    </div>
+    <SlackProvider>
+      <div>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/faq" element={<Faq />} />
+          <Route path="/channel" element={<Channel />} />
+          <Route path="/messages" element={<Messages />} />
+          <Route path="/time" element={<Time />} />
+          <Route path="/podium" element={<Podium />} />
+        </Routes>
+        <Footer />
+      </div>
+    </SlackProvider>
   );
 };
 
