@@ -3,10 +3,7 @@ import axios from 'axios';
 import qs from 'qs';
 const apiUrl = 'https://slack.com/api';
 
-const retrieveUsers = async (
-  user,
-  token = 'xoxp-4737822716051-4750575042113-5011075954039-daf26b28d7a980b3c772121446cfa47b'
-) => {
+const retrieveUsers = async (user, token = '') => {
   let messageArgs = {
     user: user,
     token: token,
@@ -15,9 +12,9 @@ const retrieveUsers = async (
     `${apiUrl}/users.info?`,
     qs.stringify(messageArgs)
   );
-  console.log('api before');
-  console.log(result);
-  console.log('api after');
+  // console.log('api before');
+  // console.log(result);
+  // console.log('api after');
 
   return result.data;
 };

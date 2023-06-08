@@ -11,7 +11,7 @@ import { useState } from 'react';
 function Channel() {
   let navigate = useNavigate();
   const routeChange = () => {
-    let path = '/messages';
+    let path = '/podium';
     navigate(path);
   };
 
@@ -39,9 +39,8 @@ function Channel() {
       <div>
         <h4>What channel will you be selecting</h4>
         <select value={chosenChannel} onChange={handleChange}>
-          <option value="General">General</option>
-          <option value="TC_MEMES">TC_MEMES</option>
-          <option value="CUSTOM">INSERT CUSTOM CHANNEL HERE</option>
+          <option value="CPWS6PPDF">TC_MEMES</option>
+          <option value="C05BA123AFQ">TopSlack</option>
         </select>
       </div>
       <div> - </div>

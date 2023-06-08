@@ -23,6 +23,7 @@ export const SlackProvider = ({ children }) => {
       //console.log(counter, 'coiUNNTERRR')
       let message = await retrieveChannels(channel, token, cursor);
       //Filters through the 100 messages and only returns the messages with a reaction
+      console.log('here is message', message);
       let messagesArr = message.messages.filter((mess) => mess.reactions);
       // adds all messages with a reaction together
       allMessagesWithReactions.push(...messagesArr);
